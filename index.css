@@ -1,0 +1,132 @@
+@import './src/reset.css';
+@import "tailwindcss";
+
+@theme {
+    --color-figma-neutral-900: #2E1401;
+    --color-figma-neutral-600: #6D5B4D;
+    --color-figma-neutral-100: #F7F3F0;
+    --color-figma-neutral-0: #FFFFFF;
+    
+    --color-figma-yellow-500: #F8CB46;
+    --color-figma-blue-400: #92ADEB;
+    --color-figma-blue-600: #5072C7;
+    --color-figma-teal-400: #47D9C9;
+    --color-figma-pink-400: #FC8AE5;
+    --color-figma-pink-500: #F073A3;
+    --color-figma-pink-700: #E11966;
+
+    --figma-spacing-0: 0px;
+    --figma-spacing-25: 2px;
+    --figma-spacing-50: 4px;
+    --figma-spacing-75: 6px;
+    --figma-spacing-100: 8px;
+    --figma-spacing-125: 10px;
+    --figma-spacing-150: 12px;
+    --figma-spacing-200: 16px;
+    --figma-spacing-250: 20px;
+    --figma-spacing-300: 24px;
+    --figma-spacing-400: 32px;
+    --figma-spacing-500: 40px;
+    --figma-spacing-600: 48px;
+    --figma-spacing-800: 64px;
+    --figma-spacing-1000: 80px;
+    --figma-spacing-1200: 96px;
+    --figmaspacing-1400: 112px;
+    --figma-spacing-1600: 128px;
+    --figma-spacing-1800: 144px;
+
+    --figma-radius-0: 0;
+    --figma-radius-4: 4px;
+    --figma-radius-6: 6px;
+    --figma-radius-8: 8px;
+    --figma-radius-10: 10px;
+    --figma-radius-12: 12px;
+    --figma-radius-16: 16px;
+    --figma-radius-20: 20px;
+    --figma-radius-24: 24px;
+    --figma-radius-full: 999px;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-weight: 400;
+}
+
+.text-preset-1 {
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 700;
+}
+
+.text-preset-1-tablet {
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 700;
+}
+
+.text-preset-1-mobile {
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 700;
+}
+
+.text-preset-2 {
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.text-preset-3 {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.text-preset-4-semibold {
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.text-preset-4-medium {
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.text-preset-4-regular {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.text-preset-5 {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.text-preset-5-medium {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.text-preset-6 {
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: -3%;
+    font-weight: 500;
+}
