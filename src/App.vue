@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-
+import Navbar from './views/Navbar.vue'
 </script>
 
 <template>
-  <div class="app-full-height bg-(--color-figma-neutral-100) py-10 flex">
-    <div class="py-5">
-      <img src="./assets/logo.png" alt="Logo" />
-    </div>
+  <div class="app-full-height bg-(--color-figma-neutral-100) py-(--figma-spacing-300) px-(--figma-spacing-1200)">
+    <Navbar />
   </div>
 </template>
 
