@@ -1,6 +1,6 @@
 <template>
     <div class="study-statistics-container">
-
+        <h3 class="text-preset-2 p-(--figma-spacing-300)">Study Statistics</h3>
     </div>
 </template>
 
