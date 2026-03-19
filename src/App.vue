@@ -19,7 +19,7 @@ import StudyStatisticsContainer from './views/study-statistics/StudyStatisticsCo
 
 <style scoped>
 .app-full-height {
-  height: 100vh;
+  height: 100%;
   max-width: 1400px;
 }
 </style>

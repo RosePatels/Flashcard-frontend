@@ -1,11 +1,12 @@
 <template>
     <div class="study-statistics-container">
-        <h3 class="text-preset-2 p-(--figma-spacing-300)">Study Statistics</h3>
+        <h3 class="text-preset-2 pb-(--figma-spacing-150)">Study Statistics</h3>
+        <StatisticsCard />
     </div>
 </template>
 
 <script setup lang="ts">
-
+import StatisticsCard from './StatisticsCard.vue';
 </script>
 
 <style scoped>
@@ -16,6 +17,7 @@
     border-right: 3px solid var(--color-figma-neutral-900);
     border-bottom: 3px solid var(--color-figma-neutral-900);
     border-radius: 16px;
+    padding: var(--figma-spacing-300);
 }
 
 </style>
