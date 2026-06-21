@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--figma-spacing-300)">
-        <div v-for="(card) in data.flashcards" class="flashcard-display-container grid grid-rows-[auto_1fr_auto]">
+        <div v-for="(card) in flashcards" class="flashcard-display-container grid grid-rows-[auto_1fr_auto]">
             <div class="text-preset-3 p-(--figma-spacing-200)">{{ card.question }}</div>
             <div class="border-y-1 border-(--color-figma-neutral-900) p-(--figma-spacing-200)">
                 <div class="text-preset-5 opacity-60 mb-(--figma-spacing-75)">Answer: </div>
@@ -25,7 +25,15 @@
 
 
 <script setup lang="ts">
-import data from "../../assets/data.json";
+import { ref, onMounted } from 'vue';
+import { getFlashcards } from '../../services/FlashcardsService';
+
+const flashcards = ref([]);
+onMounted(async () => {
+    const result = await getFlashcards();
+    flashcards.value = result.data;
+})
+
 </script>
 
 <style scoped>
