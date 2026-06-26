@@ -16,3 +16,13 @@ export async function createFlashcard(flashcardRequest: Flashcard) {
     const result = axios.post(`../api/flashcards/create`, flashcardRequest);
     return result;
 }
+
+export async function updateFlashcard(flashcardRequest: Flashcard) {
+    const result = axios.put(`../api/flashcards/update/${flashcardRequest.id}`, flashcardRequest);
+    return result;
+}
+
+export async function deleteFlashcard(flashcardId: number) {
+    const result = axios.delete(`../api/flashcards/delete/${flashcardId}`);
+    return result;
+}

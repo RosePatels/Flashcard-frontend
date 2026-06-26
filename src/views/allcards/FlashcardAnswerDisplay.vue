@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--figma-spacing-300)">
-        <div v-for="(card) in flashcards" :key="card.id" class="flashcard-display-container grid grid-rows-[auto_1fr_auto]">
+        <div v-for="(card) in stateStore.flashcards" :key="card.id" class="flashcard-display-container grid grid-rows-[auto_1fr_auto]">
             <div class="text-preset-3 p-(--figma-spacing-200)">{{ card.question }}</div>
             <div class="border-y-1 border-(--color-figma-neutral-900) p-(--figma-spacing-200)">
                 <div class="text-preset-5 opacity-60 mb-(--figma-spacing-75)">Answer: </div>
@@ -20,6 +20,8 @@
                         v-if="openMenuId === card.id"
                         class="absolute right-[5%] bottom-[110%]"
                         @close="openMenuId = null"
+                        @edit="openEditModal(card)"
+                        @delete="openDeleteModal"
                     />
                     <img
                         class="hidden sm:block cursor-pointer vertical-ellipsis "
@@ -30,6 +32,8 @@
                 </div>
             </div>
         </div>
+          <EditFlashcardModal v-model:visible="editModal" @close="closeEditModal" />
+          <DeleteFlashcardModal v-model:visible="deleteModal" @close="closeDeleteModal" />
     </div>
 </template> 
 
@@ -38,16 +42,35 @@
 import { ref, onMounted } from 'vue';
 import { getFlashcards } from '../../services/FlashcardsService';
 import FlashcardVerticalMenu from './FlashcardVerticalMenu.vue';
+import EditFlashcardModal from '../modals/editFlashcardModal.vue';
+import DeleteFlashcardModal from '../modals/DeleteFlashcardModal.vue';
+import { useStateStore } from '../../stores/state';
 
-const flashcards = ref([]);
+const stateStore = useStateStore();
 const openMenuId = ref<number | null>(null);
+
 function toggleMenu(id: number) {
     openMenuId.value = openMenuId.value === id ? null : id;
 }
+
+
 onMounted(async () => {
     const result = await getFlashcards();
-    flashcards.value = result.data;
+    stateStore.flashcards = result.data;
 })
+
+
+const editModal = ref(false);
+const openEditModal = (card) => {
+    editModal.value = true;
+    stateStore.editFlashcardModalInfo = card;
+    openMenuId.value = null; // Close the menu when opening the modal
+}
+const closeEditModal = () => editModal.value = false;
+
+const deleteModal = ref(false);
+const openDeleteModal = () => deleteModal.value = true;
+const closeDeleteModal = () => deleteModal.value = false;
 
 </script>
 
