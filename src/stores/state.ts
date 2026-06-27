@@ -16,6 +16,7 @@ export const useStateStore = defineStore('state', () => {
 
   const flashcards = ref([]);
   const editFlashcardModalInfo = ref({});
+  const deleteFlashcardModalInfo = ref({});
 
   const addFlashcardToStore = (newFlashcard) => {
     flashcards.value.unshift(newFlashcard);
@@ -28,9 +29,17 @@ export const useStateStore = defineStore('state', () => {
     }
   }
 
+  const deleteFlashcardFromStore = (flashcard) => {
+    const index = flashcards.value.findIndex(card => card.id === flashcard.id);
+    if (index !== -1) {
+      flashcards.value.splice(index, 1);
+    }
+  }
+
   return { 
     appModes,
     editFlashcardModalInfo,
+    deleteFlashcardFromStore,
     flashcards,
     updateFlashcardInStore,
     addFlashcardToStore

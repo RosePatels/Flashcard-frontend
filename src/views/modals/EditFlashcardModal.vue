@@ -53,12 +53,10 @@ const flashcard = ref<Flashcard>({
 onMounted(() => {
     document.addEventListener('click', onModalClick);
     flashcard.value = { ...stateStore.editFlashcardModalInfo };
-    console.log(flashcard.value);
 })
 
 watch(() => stateStore.editFlashcardModalInfo.id, () => {
     flashcard.value = { ...stateStore.editFlashcardModalInfo };
-    console.log(flashcard.value);
 })
 
 const onModalClick = (e: MouseEvent) => {

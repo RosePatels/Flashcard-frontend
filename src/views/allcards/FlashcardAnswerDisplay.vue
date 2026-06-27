@@ -21,7 +21,7 @@
                         class="absolute right-[5%] bottom-[110%]"
                         @close="openMenuId = null"
                         @edit="openEditModal(card)"
-                        @delete="openDeleteModal"
+                        @delete="openDeleteModal(card)"
                     />
                     <img
                         class="hidden sm:block cursor-pointer vertical-ellipsis "
@@ -69,7 +69,11 @@ const openEditModal = (card) => {
 const closeEditModal = () => editModal.value = false;
 
 const deleteModal = ref(false);
-const openDeleteModal = () => deleteModal.value = true;
+const openDeleteModal = (card) => {
+    deleteModal.value = true;
+    stateStore.deleteFlashcardModalInfo = card;
+    openMenuId.value = null; //Close the menu when opening the modal
+}
 const closeDeleteModal = () => deleteModal.value = false;
 
 </script>
