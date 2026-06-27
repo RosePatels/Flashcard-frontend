@@ -1,7 +1,7 @@
 <template>
 <Teleport to="body">
     <div v-if="visible" class="modal">
-        <div ref="dialogRef" class="bg-white p-(--figma-spacing-300) rounded-lg shadow-lg w-[400px] flashcard-form-container">
+        <div ref="dialogRef" class="bg-white p-(--figma-spacing-300) rounded-lg shadow-lg w-[400px] edit-flashcard-container">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-preset-2">Edit Flashcard</h2>
                 <div class="cross cursor-pointer" @click="emit('close')">
@@ -55,7 +55,7 @@ onMounted(() => {
     flashcard.value = { ...stateStore.editFlashcardModalInfo };
 })
 
-watch(() => stateStore.editFlashcardModalInfo.id, () => {
+watch(() => stateStore.editFlashcardModalInfo?.id, () => {
     flashcard.value = { ...stateStore.editFlashcardModalInfo };
 })
 
@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
     justify-content: center;
 }
 
-.flashcard-form-container {
+.edit-flashcard-container {
     background-color: white;
     border-left: 1px solid var(--color-figma-neutral-900);
     border-top: 1px solid var(--color-figma-neutral-900);

@@ -1,7 +1,7 @@
 <template>
 <Teleport to="body">
     <div v-if="visible" class="modal">
-        <div ref="dialogRef" class="bg-white rounded-lg shadow-lg w-[400px]">
+        <div ref="dialogRef" class="bg-white rounded-lg shadow-lg w-[400px] delete-flashcard-container">
             <div>
                 <div class="flex flex-col justify-start p-(--figma-spacing-300) border-b-1 border-b border-solid border-(--color-figma-neutral-900)">
                     <div class="text-preset-2 pb-(--figma-spacing-100)">Delete this card?</div>
@@ -57,7 +57,6 @@ const onModalClick = (e: MouseEvent) => {
 const deleteExistingFlashcard = async () => {
     try {
         const deletedFlashcard = await deleteFlashcard(flashcard.value.id);
-        console.log(deletedFlashcard);
         stateStore.deleteFlashcardFromStore(flashcard.value);
         emit('close');
     } catch(error) {
@@ -84,6 +83,15 @@ onBeforeUnmount(() => {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.delete-flashcard-container {
+    background-color: white;
+    border-left: 1px solid var(--color-figma-neutral-900);
+    border-top: 1px solid var(--color-figma-neutral-900);
+    border-right: 3px solid var(--color-figma-neutral-900);
+    border-bottom: 3px solid var(--color-figma-neutral-900);
+    border-radius: 16px;
 }
 
 </style>

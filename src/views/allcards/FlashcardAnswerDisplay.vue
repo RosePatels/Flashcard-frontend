@@ -27,7 +27,7 @@
                         class="hidden sm:block cursor-pointer vertical-ellipsis "
                         src="../../assets/images/icon-menu.svg"
                         alt="Logo"
-                        @click.stop="toggleMenu(card.id)"
+                        @click.stop="toggleMenu(card.id!)"
                     />
                 </div>
             </div>
@@ -45,6 +45,7 @@ import FlashcardVerticalMenu from './FlashcardVerticalMenu.vue';
 import EditFlashcardModal from '../modals/editFlashcardModal.vue';
 import DeleteFlashcardModal from '../modals/DeleteFlashcardModal.vue';
 import { useStateStore } from '../../stores/state';
+import type { Flashcard } from '@/services/FlashcardsService';
 
 const stateStore = useStateStore();
 const openMenuId = ref<number | null>(null);
@@ -61,7 +62,7 @@ onMounted(async () => {
 
 
 const editModal = ref(false);
-const openEditModal = (card) => {
+const openEditModal = (card: Flashcard) => {
     editModal.value = true;
     stateStore.editFlashcardModalInfo = card;
     openMenuId.value = null; // Close the menu when opening the modal
@@ -69,7 +70,7 @@ const openEditModal = (card) => {
 const closeEditModal = () => editModal.value = false;
 
 const deleteModal = ref(false);
-const openDeleteModal = (card) => {
+const openDeleteModal = (card: Flashcard) => {
     deleteModal.value = true;
     stateStore.deleteFlashcardModalInfo = card;
     openMenuId.value = null; //Close the menu when opening the modal
