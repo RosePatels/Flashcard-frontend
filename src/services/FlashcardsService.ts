@@ -5,6 +5,7 @@ export interface Flashcard {
     question: string | null;
     answer: string | null;
     category: string | null;
+    masteryProgress: number;
 }
 
 export interface InvalidFieldError {

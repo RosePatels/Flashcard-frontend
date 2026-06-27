@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="p-(--figma-spacing-200)">
-                    <div class="text-preset-6">0/5</div>
+                    <div class="text-preset-6">{{ card.masteryProgress }}/5</div>
                 </div>
 
                 <div class="border-l-1 self-stretch border-solid border-(--color-figma-neutral-900) flex items-center justify-center w-[45px] relative">

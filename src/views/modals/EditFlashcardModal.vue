@@ -47,7 +47,8 @@ const error = ref<any>(null);
 const flashcard = ref<Flashcard>({
     question: null,
     answer: null,
-    category: null
+    category: null,
+    masteryProgress: 0
 })
 
 onMounted(() => {

@@ -62,7 +62,8 @@ const stateStore = useStateStore();
 const flashcard = ref<Flashcard>({
     question: null,
     answer: null,
-    category: null
+    category: null,
+    masteryProgress: 0
 })
 
 const invalidFields = ref<InvalidFieldError>({
@@ -74,7 +75,8 @@ const invalidFields = ref<InvalidFieldError>({
 const emptyFlashcard = ref<Flashcard>({
     question: null,
     answer: null,
-    category: null
+    category: null,
+    masteryProgress: 0
 });
 
 const createNewFlashcard = async () => {

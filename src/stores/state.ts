@@ -19,12 +19,14 @@ export const useStateStore = defineStore('state', () => {
   const editFlashcardModalInfo = ref<Flashcard>({
     question: null,
     answer: null,
-    category: null
+    category: null,
+    masteryProgress: 0
   });
   const deleteFlashcardModalInfo = ref<Flashcard>({
     question: null,
     answer: null,
-    category: null
+    category: null,
+    masteryProgress: 0
   });
 
   const addFlashcardToStore = (newFlashcard: Flashcard) => {
