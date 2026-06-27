@@ -56,21 +56,22 @@
 import { ref } from 'vue';
 import { createFlashcard } from '../../services/FlashcardsService';
 import { useStateStore } from '@/stores/state';
+import type { Flashcard, InvalidFieldError } from "@/services/FlashcardsService";
 
 const stateStore = useStateStore();
-const flashcard = ref({
+const flashcard = ref<Flashcard>({
     question: null,
     answer: null,
     category: null
 })
 
-const invalidFields = ref({
+const invalidFields = ref<InvalidFieldError>({
     question: false,
     answer: false,
     category: false
 });
 
-const emptyFlashcard = ref({
+const emptyFlashcard = ref<Flashcard>({
     question: null,
     answer: null,
     category: null
@@ -103,12 +104,7 @@ const validateFields = () => {
 }
 
 const checkIfInvalidFields = () => {
-    for(let key in invalidFields.value) {
-        if(invalidFields.value[key]) {
-            return true;
-        }
-    }
-    return false;
+    return Object.values(invalidFields.value).some(value => value);
 }
 
 const updateInvalidFields = () => {

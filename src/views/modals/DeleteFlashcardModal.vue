@@ -56,10 +56,10 @@ const onModalClick = (e: MouseEvent) => {
 
 const deleteExistingFlashcard = async () => {
     try {
-        const deletedFlashcard = await deleteFlashcard(flashcard.value.id);
+        const deletedFlashcard = await deleteFlashcard(flashcard.value.id!);
         stateStore.deleteFlashcardFromStore(flashcard.value);
         emit('close');
-    } catch(error) {
+    } catch(error: any) {
         error.value = error;
     }
 }

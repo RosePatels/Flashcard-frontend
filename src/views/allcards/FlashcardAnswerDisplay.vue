@@ -42,7 +42,7 @@
 import { ref, onMounted } from 'vue';
 import { getFlashcards } from '../../services/FlashcardsService';
 import FlashcardVerticalMenu from './FlashcardVerticalMenu.vue';
-import EditFlashcardModal from '../modals/editFlashcardModal.vue';
+import EditFlashcardModal from '@/views/modals/EditFlashcardModal.vue';
 import DeleteFlashcardModal from '../modals/DeleteFlashcardModal.vue';
 import { useStateStore } from '../../stores/state';
 import type { Flashcard } from '@/services/FlashcardsService';

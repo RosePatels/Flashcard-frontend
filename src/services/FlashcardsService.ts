@@ -7,6 +7,12 @@ export interface Flashcard {
     category: string | null;
 }
 
+export interface InvalidFieldError {
+    question: boolean;
+    answer: boolean;
+    category: boolean;
+}
+
 export async function getFlashcards() {
     const result = axios.get(`../api/flashcards/list`);
     return result;

@@ -73,7 +73,7 @@ const updateExistingFlashcard = async () => {
         const updatedFlashcard = await updateFlashcard(flashcard.value);
         stateStore.updateFlashcardInStore(updatedFlashcard.data);
         emit('close');
-    } catch(error) {
+    } catch(error: any) {
         error.value = error;
     }
 }
