@@ -11,7 +11,14 @@
         <input type="checkbox" id="hideMastered" />
         <label for="hideMastered" class="ml-(--figma-spacing-150) text-preset-4">Hide Mastered</label>
     </div>
-    <button >Shuffle</button>
+    <button class="ml-4 flex cursor-pointer text-preset-4 px-(--figma-spacing-200) py-(--figma-spacing-150) rounded-(--figma-radius-full) border border-(--color-figma-neutral-900) hover:bg-(--color-figma-neutral-100)">
+         <img
+            class="hidden sm:block mr-(--figma-spacing-100)"
+            src="../../assets/images/icon-shuffle.svg"
+            alt="Logo"
+        />
+        Shuffle
+    </button>
  </div>
 </template> 
 
