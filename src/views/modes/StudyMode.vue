@@ -6,8 +6,18 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import FlashcardMainContainer from '../flashcard/FlashcardMainContainer.vue';
 import StudyStatisticsContainer from '../study-statistics/StudyStatisticsContainer.vue';
+import { getFlashcards } from '@/services/FlashcardsService';
+import { useStateStore } from '@/stores/state';
+
+const stateStore = useStateStore();
+
+onMounted(async () => {
+    const result = await getFlashcards();
+    stateStore.flashcards = result.data;
+})
 </script>
 
 <style scoped>

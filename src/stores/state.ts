@@ -16,6 +16,10 @@ export const useStateStore = defineStore('state', () => {
 ]);
 
   const flashcards = ref<Flashcard[]>([]);
+  const currentFlashcardIndex = ref(2);
+  const showAnswer = ref(false);
+
+
   const editFlashcardModalInfo = ref<Flashcard>({
     question: null,
     answer: null,
@@ -54,6 +58,8 @@ export const useStateStore = defineStore('state', () => {
     deleteFlashcardFromStore,
     flashcards,
     updateFlashcardInStore,
-    addFlashcardToStore
+    addFlashcardToStore,
+    currentFlashcardIndex,
+    showAnswer
    }
 })
