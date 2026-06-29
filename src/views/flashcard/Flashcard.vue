@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-(--color-figma-pink-400) p-(--figma-spacing-300) drop-shadow-[1px_2px_0px_var(--color-figma-neutral-900)] flex flex-col items-center justify-center rounded-(--figma-radius-16) border-1 border-solid border-(--color-figma-neutral-900) h-[360px] bg-[url('src/assets/images/pattern-flashcard-bg.svg')] cursor-pointer" @click="revealAnswer">
+    <div class=" p-(--figma-spacing-300) drop-shadow-[1px_2px_0px_var(--color-figma-neutral-900)] flex flex-col items-center justify-center rounded-(--figma-radius-16) border-1 border-solid border-(--color-figma-neutral-900) h-[360px] bg-[url('src/assets/images/pattern-flashcard-bg.svg')] cursor-pointer" @click="revealAnswer" :class="{ 'bg-(--color-figma-pink-400)': !stateStore.showAnswer, 'bg-(--color-figma-blue-400)': stateStore.showAnswer }">
         <div class="flex items-center justify-center">
             <div class="bg-(--color-figma-neutral-0) drop-shadow-[1px_2px_0px_var(--color-figma-neutral-900)] rounded-(--figma-radius-full) px-(--figma-spacing-150) py-(--figma-spacing-100) text-preset-6 border-1 border-solid border-(--color-figma-neutral-900)">{{ stateStore.flashcards[stateStore.currentFlashcardIndex]?.category }}</div>
         </div>
