@@ -35,6 +35,9 @@ const knowAnswer = async () => {
         currentFlashcard.masteryProgress += 1;
     }
     await updateFlashcard(currentFlashcard);
+    if(stateStore.mastered && currentFlashcard.masteryProgress >= 5) {
+        stateStore.deleteFlashcardFromStore(currentFlashcard);
+    }
 }
 
 const resetProgress = async () => {
