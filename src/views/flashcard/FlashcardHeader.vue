@@ -11,7 +11,7 @@
         <input type="checkbox" id="hideMastered" v-model="stateStore.mastered" @change="hideMastered" />
         <label for="hideMastered" class="ml-(--figma-spacing-150) text-preset-4">Hide Mastered</label>
     </div>
-    <button class="ml-4 flex cursor-pointer text-preset-4 px-(--figma-spacing-200) py-(--figma-spacing-150) rounded-(--figma-radius-full) border border-(--color-figma-neutral-900) hover:bg-(--color-figma-neutral-100)">
+    <button class="ml-4 flex cursor-pointer text-preset-4 px-(--figma-spacing-200) py-(--figma-spacing-150) rounded-(--figma-radius-full) border border-(--color-figma-neutral-900) hover:bg-(--color-figma-neutral-100)" @click="shuffleCards">
          <img
             class="hidden sm:block mr-(--figma-spacing-100)"
             src="../../assets/images/icon-shuffle.svg"
@@ -36,6 +36,14 @@ const hideMastered = async () => {
     } else {
         const allFlashcards = await getFlashcards();
         stateStore.flashcards = allFlashcards.data;
+    }
+    stateStore.currentFlashcardIndex = 0;
+}
+
+const shuffleCards = () => {
+    for (let i = stateStore.flashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [stateStore.flashcards[i], stateStore.flashcards[j]] = [stateStore.flashcards[j], stateStore.flashcards[i]];
     }
     stateStore.currentFlashcardIndex = 0;
 }
