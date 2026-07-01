@@ -17,6 +17,7 @@ const stateStore = useStateStore();
 onMounted(async () => {
     const result = await getFlashcards();
     stateStore.flashcards = result.data;
+    stateStore.currentFlashcardIndex = 0;
 })
 </script>
 
