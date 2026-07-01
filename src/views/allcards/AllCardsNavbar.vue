@@ -2,7 +2,7 @@
 <div class="py-(--figma-spacing-400) flex items-center justify-between">
      <div class="flex items-center">
         <div class="relative mr-5">
-            <button class="flex cursor-pointer text-preset-4 px-(--figma-spacing-200) py-(--figma-spacing-150) rounded-(--figma-radius-full) border border-(--color-figma-neutral-900) hover:bg-(--color-figma-neutral-100) bg-(--color-figma-neutral-0)" @click.stop="toggleCategoriesDropdown">All Categories
+            <button class="flex cursor-pointer text-preset-4 px-(--figma-spacing-200) py-(--figma-spacing-150) rounded-(--figma-radius-full) border border-(--color-figma-neutral-900) hover:bg-(--color-figma-neutral-100) bg-(--color-figma-neutral-0)" @click="toggleCategoriesDropdown">All Categories
                 <img
                     class="hidden sm:block ml-(--figma-spacing-100)"
                     src="../../assets/images/icon-chevron-down.svg"
